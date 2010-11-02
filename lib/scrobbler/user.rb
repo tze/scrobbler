@@ -79,7 +79,7 @@ module Scrobbler
     
     def initialize(username, o={})
       options = {:include_profile => false}.merge(o)
-      raise ArgumentError if username.blank?
+      raise ArgumentError if username.empty?
       @username = username
       load_profile() if options[:include_profile]
     end

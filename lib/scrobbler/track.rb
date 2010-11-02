@@ -75,8 +75,8 @@ module Scrobbler
     end
     
     def initialize(artist, name)
-      raise ArgumentError, "Artist is required" if artist.blank?
-      raise ArgumentError, "Name is required" if name.blank?
+      raise ArgumentError, "Artist is required" if artist.empty?
+      raise ArgumentError, "Name is required" if name.empty?
       @artist = artist
       @name = name
     end

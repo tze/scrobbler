@@ -6,8 +6,8 @@ module Scrobbler
       end
     end
     def initialize(from, to)
-      raise ArgumentError, "From is required" if from.blank?
-      raise ArgumentError, "To is required" if to.blank?
+      raise ArgumentError, "From is required" if from.empty?
+      raise ArgumentError, "To is required" if to.empty?
       @from = from
       @to = to
     end
