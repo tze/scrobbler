@@ -17,7 +17,7 @@ module Scrobbler
     private
       # in order for subclass to use, it must have api_path method
       def get_instance(api_method, instance_name, element, force=false)
-        scrobbler_class = "scrobbler/#{element.to_s}".camelize.constantize
+        scrobbler_class = "scrobbler/#{element.to_s}".capitalize
         if instance_variable_get("@#{instance_name}").nil? || force
           doc      = self.class.fetch_and_parse("#{api_path}/#{api_method}.xml")
           elements = (doc/element).inject([]) { |elements, el| elements << scrobbler_class.new_from_xml(el, doc); elements }
