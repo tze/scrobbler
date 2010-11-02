@@ -90,7 +90,7 @@ module Scrobbler
     end
     
     def initialize(name)
-      raise ArgumentError, "Name is required" if name.empty?
+      raise ArgumentError, "Name is required" if name.nil?
       @name = name
     end
     

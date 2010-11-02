@@ -33,6 +33,9 @@
 #   (2449) mlmjcace
 #   (2302) tiNEey
 #   (2169) ajsbabiegirl
+
+require "time"
+
 module Scrobbler
   class Track < Base
     attr_accessor :artist, :artist_mbid, :name, :mbid, :playcount, :rank, :url, :reach
@@ -75,8 +78,8 @@ module Scrobbler
     end
     
     def initialize(artist, name)
-      raise ArgumentError, "Artist is required" if artist.empty?
-      raise ArgumentError, "Name is required" if name.empty?
+      raise ArgumentError, "Artist is required" if artist.nil?
+      raise ArgumentError, "Name is required" if name.nil?
       @artist = artist
       @name = name
     end

@@ -22,7 +22,7 @@ module Scrobbler
       @track_number = args[:track_number] || '' # track number (optional)
       @mb_track_id = args[:mb_track_id] || '' # MusicBrainz track ID (optional)
 
-      if [@session_id, @submission_url, @artist, @track].any?(&:empty?)
+      if [@session_id, @submission_url, @artist, @track].any?(&:nil?)
         raise ArgumentError, 'Missing required argument'
       elsif @time.class.to_s != 'Time'
         raise ArgumentError, ":time must be a Time object"

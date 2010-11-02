@@ -91,8 +91,8 @@ module Scrobbler
     end
     
     def initialize(artist, name, o={})
-      raise ArgumentError, "Artist is required" if artist.empty?
-      raise ArgumentError, "Name is required" if name.empty?
+      raise ArgumentError, "Artist is required" if artist.nil?
+      raise ArgumentError, "Name is required" if name.nil?
       @artist = artist
       @name   = name
       options = {:include_info => false}.merge(o)
