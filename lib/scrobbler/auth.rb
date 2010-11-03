@@ -73,7 +73,7 @@ module Scrobbler
         # Url to send user to
         #
         # @see http://www.last.fm/api/webauth#2
-        def self.token_url
+        def token_url
             "http://www.last.fm/api/auth?api_key=#{@api_key}"
         end
     end
