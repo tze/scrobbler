@@ -70,6 +70,13 @@ Below is just a sampling of how easy this lib is to use.
 	puts "=" * 4
 	track.fans.each { |u| puts "(#{u.weight}) #{u.username}" }
 	
+== Authentication For Websession (no password needed)
+
+    auth = Scrobbler::Auth.new(:api_key => api_key, :api_secret => api_secret)
+    # Redirect user to auth.token_url ?cb=http://yourhost.com
+    # Last.FM will redirect to the cb URL and append a token GET parameter with the token
+    auth.new_session!(token)
+	
 == Simple Authentication (for Scrobbling)
 
     auth = Scrobbler::SimpleAuth.new(:user => 'chunky', :password => 'bacon')
