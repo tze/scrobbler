@@ -73,9 +73,11 @@ Below is just a sampling of how easy this lib is to use.
 == Authentication For Websession (no password needed)
 
     auth = Scrobbler::Auth.new(:api_key => api_key, :api_secret => api_secret)
-    # Redirect user to auth.token_url ?cb=http://yourhost.com
-    # Last.FM will redirect to the cb URL and append a token GET parameter with the token
+    # Redirect user to #{Scrobbler::Auth.token_url}?cb=http://yourhost.com
+    # Last.FM will redirect to the cb URL and append the token as GET parameter.
+    # Afterwards create session with shiny new token
     auth.new_session!(token)
+    # Now persist auth.session_id
 	
 == Simple Authentication (for Scrobbling)
 

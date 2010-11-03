@@ -73,11 +73,8 @@ module Scrobbler
         # Url to send user to
         #
         # @see http://www.last.fm/api/webauth#2
-        def token_url
+        def self.token_url
             "http://www.last.fm/api/auth?api_key=#{@api_key}"
         end
     end
 end
-
-#auth = Scrobbler::Auth.new(:api_key => "7750329bbc9ff60981568d4c01e2dd98", :api_secret => "4fe7f5ce0bdb31390ade90a9d4ae2eab")
-#auth.new_session!("")
